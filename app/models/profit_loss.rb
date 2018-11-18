@@ -1,0 +1,2 @@
+class ProfitLoss < ApplicationRecord
+end
