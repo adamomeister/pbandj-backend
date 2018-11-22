@@ -8,17 +8,17 @@
 
 
 inputData = [
-  "3004 - Termite Treatments",  #revenue_name
+  "3010 - Commercial Sales",  #revenue_name
   2018,                       #year
-  28331.00,                           #january
-  20297.00,                           #february
-  32019.00,                           #march
-  23393.00,                           #april
-  19196.00,                           #may
-  17513.00,                           #june
-  22095.00,                           #july
-  27954.00,                           #august
-  20726.00,                           #september
+  # ,                           #january
+  # ,                           #february
+  # ,                           #march
+  # ,                           #april
+  # ,                           #may
+  # ,                           #june
+  # ,                           #july
+  # ,                           #august
+  # ,                           #september
   # ,                           #october
   # ,                           #november
   # ,                           #december
