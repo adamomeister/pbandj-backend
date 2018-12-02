@@ -39,22 +39,22 @@ p testRow[1].value
   # ]
 
 
-# profit_loss = ProfitLoss.new(
-#   revenue_name: inputData[0],
-#   year: inputData[1],
-#   january: inputData[2],
-#   february: inputData[3],
-#   march: inputData[4],
-#   april: inputData[5],
-#   may: inputData[6],
-#   june: inputData[7],
-#   july: inputData[8],
-#   august: inputData[9],
-#   september: inputData[10],
-#   october: inputData[11],
-#   november: inputData[12],
-#   december: inputData[13],
-#   total: inputData[14],
-# )
+profit_loss = ProfitLoss.new(
+  revenue_name: inputData[0],
+  year: inputData[1],
+  january: inputData[2],
+  february: inputData[3],
+  march: inputData[4],
+  april: inputData[5],
+  may: inputData[6],
+  june: inputData[7],
+  july: inputData[8],
+  august: inputData[9],
+  september: inputData[10],
+  october: inputData[11],
+  november: inputData[12],
+  december: inputData[13],
+  total: inputData[14],
+)
 
 # profit_loss.save

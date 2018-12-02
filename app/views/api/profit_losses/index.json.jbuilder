@@ -1,4 +1,5 @@
 json.array! @profitlosses do |profitloss|
+  json.row_id profitloss.row_id
   json.revenue_name profitloss.revenue_name
   json.year profitloss.year
   json.january profitloss.january
