@@ -1,18 +1,18 @@
 json.array! @profitlosses do |profitloss|
-  json.row_id profitloss.row_id
+  json.row_id profitloss.id
   json.revenue_name profitloss.revenue_name
   json.year profitloss.year
-  json.january profitloss.january
-  json.february profitloss.february
-  json.march profitloss.march
-  json.april profitloss.april
-  json.may profitloss.may
-  json.june profitloss.june
-  json.july profitloss.july
-  json.august profitloss.august
-  json.september profitloss.september
-  json.october profitloss.october
-  json.november profitloss.november
-  json.december profitloss.december
-  json.total profitloss.total
+  json.january number_to_currency(profitloss.january)
+  json.february number_to_currency(profitloss.february)
+  json.march number_to_currency(profitloss.march)
+  json.april number_to_currency(profitloss.april)
+  json.may number_to_currency(profitloss.may)
+  json.june number_to_currency(profitloss.june)
+  json.july number_to_currency(profitloss.july)
+  json.august number_to_currency(profitloss.august)
+  json.september number_to_currency(profitloss.september)
+  json.october number_to_currency(profitloss.october)
+  json.november number_to_currency(profitloss.november)
+  json.december number_to_currency(profitloss.december)
+  json.total number_to_currency(profitloss.revenue_total)
 end

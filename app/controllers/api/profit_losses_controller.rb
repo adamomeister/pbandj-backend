@@ -4,4 +4,5 @@ class Api::ProfitLossesController < ApplicationController
     @profitlosses = ProfitLoss.all
     render 'index.json.jbuilder'
   end
+
 end
