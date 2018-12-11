@@ -1,5 +1,5 @@
 class ProfitLoss < ApplicationRecord
-  def revenue_total
+  def revenue_group_total_ytd
     revenue_tot =
       january +
       february +

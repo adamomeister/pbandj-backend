@@ -14,5 +14,5 @@ json.array! @profitlosses do |profitloss|
   json.october number_to_currency(profitloss.october)
   json.november number_to_currency(profitloss.november)
   json.december number_to_currency(profitloss.december)
-  json.total number_to_currency(profitloss.revenue_total)
+  json.revenue_group_total_ytd number_to_currency(profitloss.revenue_group_total_ytd)
 end
