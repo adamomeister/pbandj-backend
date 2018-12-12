@@ -5,8 +5,14 @@ class Api::ProfitLossesController < ApplicationController
   end
 
   def show
-    revenue_year = params[:year]
-    @profitlosses = ProfitLoss.where(year: revenue_year)
+    search_year = params[:year]
+    search_pl_category = params[:category]
+    search_pl_type = params[:type]
+    @profitlosses = ProfitLoss.where(
+      year: search_year,
+      profit_loss_category: search_pl_category,
+      profit_loss_type: search_pl_type
+      )
     render 'index.json.jbuilder'
   end
 end

@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_032315) do
+ActiveRecord::Schema.define(version: 2018_12_12_025253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "profit_losses", force: :cascade do |t|
     t.string "user_id"
-    t.string "revenue_name"
+    t.string "profit_loss_name"
     t.integer "year"
     t.decimal "january", precision: 11, scale: 2
     t.decimal "february", precision: 11, scale: 2
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_032315) do
     t.datetime "updated_at", null: false
     t.integer "row_id"
     t.integer "upload_id"
+    t.string "profit_loss_category"
+    t.string "profit_loss_type"
   end
 
 end

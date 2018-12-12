@@ -1,6 +1,6 @@
 json.array! @profitlosses do |profitloss|
   json.row_id profitloss.id
-  json.revenue_name profitloss.revenue_name
+  json.profit_loss_name profitloss.profit_loss_name
   json.year profitloss.year
   json.january number_to_currency(profitloss.january)
   json.february number_to_currency(profitloss.february)
