@@ -12,7 +12,7 @@ class Api::ProfitLossesController < ApplicationController
       year: search_year,
       profit_loss_category: search_pl_category,
       profit_loss_type: search_pl_type
-      )
+      ).order(id: :asc)
     render 'index.json.jbuilder'
   end
 end
