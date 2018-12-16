@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Some code to fix data I messed up
-# fix_pl_types = ProfitLoss.where(profit_loss_type: 'Interest')
+# Some code to update data
+# edit_pl_types = ProfitLoss.where("profit_loss_name LIKE ? AND profit_loss_category = ?", "5%", "costs")
 
-# fix_pl_types.each do |type|
-#   type.profit_loss_type = type.profit_loss_type.downcase
+# edit_pl_types.each do |type|
+#   type.profit_loss_type = "fixed"
 #   p type.profit_loss_type
 #   type.save
 # end
