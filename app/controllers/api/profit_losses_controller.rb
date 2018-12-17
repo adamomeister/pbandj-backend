@@ -4,15 +4,29 @@ class Api::ProfitLossesController < ApplicationController
     render 'index.json.jbuilder'
   end
 
-  def index_revenue_query
+  def index_profit_loss_query
+    # query
     search_year = params[:year]
-    search_pl_category = params[:category]
-    search_pl_type = params[:type]
-    revenue_incomes = ProfitLoss.where(
-      year: search_year,
-      profit_loss_category: search_pl_category,
-      profit_loss_type: search_pl_type
-    ).order(id: :asc)
+    profit_losses_by_year = ProfitLoss.where(year: search_year).order(id: :asc)
+
+    # data parse
+    revenue_incomes = []
+    direct_costs = []
+    fixed_costs = []
+    profit_losses_by_year.each do |profit_loss_by_year|
+      if profit_loss_by_year.profit_loss_category == 'income' &&
+         profit_loss_by_year.profit_loss_type == 'revenue'
+        revenue_incomes << profit_loss_by_year
+      elsif profit_loss_by_year.profit_loss_category == 'costs' &&
+            profit_loss_by_year.profit_loss_type == 'direct'
+        direct_costs << profit_loss_by_year
+      elsif profit_loss_by_year.profit_loss_category == 'costs' &&
+            profit_loss_by_year.profit_loss_type == 'fixed'
+        fixed_costs << profit_loss_by_year
+      end
+    end
+
+    # revenue data
     @revenue_monthly_totals = monthly_total(revenue_incomes)
     @revenue_group_totals = []
     @revenue_income_names = []
@@ -20,18 +34,8 @@ class Api::ProfitLossesController < ApplicationController
       @revenue_group_totals << revenue_income.profit_loss_group_total_ytd
       @revenue_income_names << revenue_income.profit_loss_name
     end
-    render 'index_rev_query.json.jbuilder'
-  end
 
-  def index_direct_costs_query
-    search_year = params[:year]
-    search_pl_category = params[:category]
-    search_pl_type = params[:type]
-    direct_costs = ProfitLoss.where(
-      year: search_year,
-      profit_loss_category: search_pl_category,
-      profit_loss_type: search_pl_type
-    ).order(id: :asc)
+    # direct costs data
     @direct_costs_monthly_totals = monthly_total(direct_costs)
     @direct_costs_group_totals = []
     @direct_costs_names = []
@@ -39,6 +43,15 @@ class Api::ProfitLossesController < ApplicationController
       @direct_costs_group_totals << direct_cost.profit_loss_group_total_ytd
       @direct_costs_names << direct_cost.profit_loss_name
     end
-    render 'index_direct_cost_query.json.jbuilder'
+
+    # fixed costs data
+    @fixed_costs_monthly_totals = monthly_total(fixed_costs)
+    @fixed_costs_group_totals = []
+    @fixed_costs_names = []
+    fixed_costs.each do |fixed_cost|
+      @fixed_costs_group_totals << fixed_cost.profit_loss_group_total_ytd
+      @fixed_costs_names << fixed_cost.profit_loss_name
+    end
+    render 'index_profit_loss_query.json.jbuilder'
   end
 end

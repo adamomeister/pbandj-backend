@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
     get '/profit_losses' => 'profit_losses#index'
-    get '/profit_losses/revenue_query' => 'profit_losses#index_revenue_query'
-    get '/profit_losses/direct_costs_query' => 'profit_losses#index_direct_costs_query'
+    get '/profit_losses/profit_loss_query' => 'profit_losses#index_profit_loss_query'
   end 
 end
