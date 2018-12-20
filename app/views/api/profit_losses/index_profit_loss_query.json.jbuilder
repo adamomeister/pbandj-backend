@@ -48,3 +48,11 @@ json.direct_costs_monthly_totals @direct_costs_monthly_totals
 json.fixed_costs_data @fixed_costs_group_totals
 json.fixed_costs_labels @fixed_costs_names
 json.fixed_costs_monthly_totals @fixed_costs_monthly_totals
+
+#render profit data
+json.yearly_total_revenue @yearly_total_revenue
+json.yearly_total_direct_costs @yearly_total_direct_costs
+json.yearly_gross_profit @yearly_gross_profit
+json.yearly_gross_profit_percent @yearly_gross_profit_percent
+json.yearly_net_income @yearly_net_income
+json.yearly_net_income_percent @yearly_net_income_percent

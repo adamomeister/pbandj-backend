@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# gem 'debugger', '~> 1.6', '>= 1.6.8'
+
 gem 'seed_dump'
 
 gem 'spreadsheet', '~> 1.1', '>= 1.1.4', require: 'spreadsheet'

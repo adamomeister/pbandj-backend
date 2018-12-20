@@ -16,10 +16,53 @@
 # end
 
 # Load the excel file in .xls format
-# input_file = Spreadsheet.open '/users/christopherjadamo/Desktop/P&L01.01.16-YTD.xls'
+# input_file = Spreadsheet.open '/users/christopherjadamo/Desktop/File_Upload_Example.xls'
 
-# Load first sheet from excel file
-# input_sheet = input_file.worksheet 2
+# worksheet_index = 0
+
+# input_file.worksheets.count.times do
+#   # Load sheet from excel file
+#   input_sheet = input_file.worksheet worksheet_index
+#   input_sheet.each 2 do |row|
+#     cell_index = 0
+#     input_data = []
+#     row.length.times do
+#       if row[cell_index] == nil
+#         input_data << 0
+#       else
+#         input_data << row[cell_index]
+#       end
+#       cell_index += 1
+#     end
+#     profit_loss = ProfitLoss.new(
+#       profit_loss_name: input_data[0],
+#       january: input_data[1],
+#       february: input_data[2],
+#       march: input_data[3],
+#       april: input_data[4],
+#       may: input_data[5],
+#       june: input_data[6],
+#       july: input_data[7],
+#       august: input_data[8],
+#       september: input_data[9],
+#       october: input_data[10],
+#       november: input_data[11],
+#       december: input_data[12],
+#       year: input_data[13],
+#       profit_loss_category: input_data[14],
+#       profit_loss_type: input_data[15]
+#     )
+#     profit_loss.save
+#   end
+#   worksheet_index += 1
+# end
+#     if input_row[i] == nil
+#       input_data << 0
+#     else
+#       input_data << input_row[i]
+#     end
+#     i += 1
+#   end
 
 # j = 1
 # while j <= 56
@@ -32,36 +75,30 @@
 #   i = 1
 
 #   while i <= 12
-#     if input_row[i] == nil
-#       input_data << 0
-#     else
-#       input_data << input_row[i]
-#     end
-#     i += 1
-#   end
 
 #   j += 1
-#   # pp input_data
+  # pp input_data
 #   profit_loss = ProfitLoss.new(
-#     revenue_name: input_data[0],
-#     year: 2017,
-#     january: input_data[1],
-#     february: input_data[2],
-#     march: input_data[3],
-#     april: input_data[4],
-#     may: input_data[5],
-#     june: input_data[6],
-#     july: input_data[7],
-#     august: input_data[8],
-#     september: input_data[9],
-#     october: input_data[10],
-#     november: input_data[11],
-#     december: input_data[12],
-#     total: 0,
+#     revenue_name: 
+#     january: 
+#     february: 
+#     march: 
+#     april: 
+#     may: 
+#     june: 
+#     july: 
+#     august: 
+#     september: 
+#     october: 
+#     november: 
+#     december: 
+#     year:
+#     profit_loss_category:
+#     profit_loss_type:
 #   )
 
 #   profit_loss.save
-# end
+# # end
 
 # **************** Begin seed dump data *****************
 
