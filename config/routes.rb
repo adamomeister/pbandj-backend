@@ -5,5 +5,9 @@ Rails.application.routes.draw do
     get '/profit_losses' => 'profit_losses#index'
     get '/profit_losses/profit_loss_query' => 'profit_losses#index_profit_loss_query'
     post '/profit_losses/file_upload' => 'profit_losses#update'
+
+    #users
+    post "/users" => "users#create"
+
   end 
 end
