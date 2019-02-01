@@ -11,8 +11,20 @@ class TokenController < ApplicationController
     redirect_to url.to_s
   end
 
-  def api
-    
+  def api(token)
+    authToken = 'Bearer ' + token
+    puts "authtoken: " + authToken
+    headers = {
+      'Accept' => 'application/json',
+      'Authorization' => authToken,
+      'intuit_tid' => 'idg-dgtms2rcirvvduidx05vvdfg-5417617',
+      'User-Agent' => 'APIExplorer'
+    }
+    p headers
+    uri = 'https://sandbox-quickbooks.api.intuit.com/v3/company/123146292511724/companyinfo/123146292511724?minorversion=4'
+    response = HTTParty.get(uri, headers: headers)
+    puts "\n\n\tAPI response:\n" + response.body.to_s
+    puts "\n\n\tCompany name, should say sandbox or Thomas if it works:\n\t" + response["CompanyInfo"]["CompanyName"]
   end
 
   def new
@@ -28,6 +40,7 @@ class TokenController < ApplicationController
       params[:x_refresh_token_expires_in] = result["x_refresh_token_expires_in"]
       params[:access_token] = result["access_token"]
       params[:host_uri] = @hostURL.to_s
+      api(result["access_token"])
     else
       render html: '<div>Your State is not matched, consider it hacked.<div>'.html_safe
     end
