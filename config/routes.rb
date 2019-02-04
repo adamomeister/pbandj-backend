@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # STEP 1: A ROUTE triggers a controller action
   # verb "/urls" => "namespace/controllers#action"
 
-  get '/callback' => 'api/token#new'  #intuit callback
+  get '/callback' => 'api/token#new'  #intuit callback DOES THIS WORK? '/api/'?
 
   namespace :api do
     get '/profit_losses' => 'profit_losses#index'
