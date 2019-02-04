@@ -9,6 +9,8 @@ gem 'seed_dump'
 
 gem 'jwt'
 
+gem 'httparty'
+
 gem 'spreadsheet', '~> 1.1', '>= 1.1.4', require: 'spreadsheet'
 
 gem 'rack-cors', require: 'rack/cors'
