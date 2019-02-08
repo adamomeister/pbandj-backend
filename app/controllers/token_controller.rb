@@ -39,6 +39,8 @@ class TokenController < ApplicationController
       params[:expires_in] = result["expires_in"]
       params[:x_refresh_token_expires_in] = result["x_refresh_token_expires_in"]
       params[:access_token] = result["access_token"]
+      puts "\n\taccess_token: "
+      p result["access_token"]
       params[:host_uri] = @hostURL.to_s
       api(result["access_token"])
     else
