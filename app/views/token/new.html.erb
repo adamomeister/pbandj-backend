@@ -1,0 +1,12 @@
+<h1>Below is the Result of Your Access Token:</h1>
+<p>
+Realm ID: <%= params[:realmId] %><br>
+Access Token: <%= params[:access_token] %><br>
+Access Token Expires In: <%= params[:expires_in] %><br>
+Refresh Token: <%= params[:refresh_token] %><br>
+Refresh Token Expires In: <%= params[:x_refresh_token_expires_in] %><br>
+</p>
+
+<%= link_to("Refresh Your OAuth Token", params[:refresh_token] + "/edit") %> (doesnt work - TN)<br>
+<%= link_to("lets make a API call and output to console", params[:access_token] + "/api") %> (doesnt work - TN)<br>
+<%= link_to("Home", params[:host_uri]) %>

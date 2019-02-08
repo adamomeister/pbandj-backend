@@ -7,6 +7,8 @@ ruby '2.5.1'
 
 gem 'seed_dump'
 
+gem 'httparty'
+
 gem 'jwt'
 
 gem 'spreadsheet', '~> 1.1', '>= 1.1.4', require: 'spreadsheet'
