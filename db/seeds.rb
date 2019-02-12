@@ -6,6 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Address.destroy_all
+Company.destroy_all
+
+3.times do
+  address = Address.create(city: Faker::Address.city, street: Faker::Address.street_name, state: Faker::Address.state, zip: Faker::Address.zip)
+  address.save
+end
+
+3.times do
+  company = Company.create(company_name: Faker::Company.name, industry: Faker::Company.industry)
+  company.save
+end
+
+
+
+
+
+
+
+
+
+
+
 # Some code to update data
 # edit_pl_types = ProfitLoss.where("profit_loss_name LIKE ? AND profit_loss_category = ?", "5%", "costs")
 
