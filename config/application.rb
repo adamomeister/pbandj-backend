@@ -33,3 +33,4 @@ module Capstone
     config.generators.system_tests = nil
   end
 end
+
